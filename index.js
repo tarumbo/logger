@@ -17,8 +17,8 @@ class Logger {
      * @param {LoggerOptions} options 
      */
     constructor(options) {
-        this.options = options || { colors: {} };
-        this.options.colors = {};
+        this.options = options;
+        if(!this.options.colors) this.options.colors = {};
         this.chalk = require('chalk');
         this.logsymbols = require('log-symbols');
         this.logLevels = {
