@@ -1,6 +1,6 @@
 {
   "name": "@tarumbo/logger",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Tarumbo's utility logger package.",
   "main": "index.js",
   "scripts": {
@@ -12,5 +12,9 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "log-symbols": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tarumbo/logger.git"
   }
 }
