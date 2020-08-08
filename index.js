@@ -50,16 +50,16 @@ class Logger {
         return `${start} ${this.chalk[color] ? this.base[color](txt) : this.base.hex(color)(txt)}`
     }
     error(msg) {
-        return console.log(this.compile(msg, this.options.colors.error || `red`, this.logsymbols.error));
+        return console.log(this.compile(msg, this.options.colors.error, this.logsymbols.error));
     }
     info(msg) {
-        return console.log(this.compile(msg, this.options.colors.info || `blue`, this.logsymbols.info));
+        return console.log(this.compile(msg, this.options.colors.info, this.logsymbols.info));
     }
     warning(msg) {
-        return console.log(this.compile(msg, this.options.colors.warning || `yellow`, this.logsymbols.warning));
+        return console.log(this.compile(msg, this.options.colors.warning, this.logsymbols.warning));
     }
     success(msg) {
-        return console.log(this.compile(msg, this.options.colors.success || `green`, this.logsymbols.success));
+        return console.log(this.compile(msg, this.options.colors.success, this.logsymbols.success));
     }
     log(msg) {
         return console.log(this.compile(msg, this.options.colors[this.level] || this.defaults[this.level], this.logsymbols[this.level]));
