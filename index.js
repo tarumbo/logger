@@ -23,7 +23,7 @@ class Logger {
             error: `red`,
             success: `green`
         }
-        this.options = options;
+        this.options = options || {};
         if(!this.options.colors) this.options.colors = {
             info: this.defaults.info,
             warning: this.defaults.warning,
@@ -33,6 +33,7 @@ class Logger {
             Object.entries(this.options.colors).map((prop) => this.options.colors[prop[0]] = prop[1]);
             Object.entries(this.defaults).filter(prop => !this.options.colors[prop[0]]).map((prop) => this.options[prop[0]] = prop[1])
         }
+        console.log(this.options);
         this.chalk = require('chalk');
         this.logsymbols = require('log-symbols');
         this.logLevels = {

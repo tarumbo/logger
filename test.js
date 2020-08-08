@@ -1,7 +1,8 @@
 const logger = require('.');
 const Logger = new logger({
+    defaultLogLevel: 1,
     colors: {
-        error: `#123`
+        error: `213`
     }
 });
 Logger.log("text") // Will log using the defaultLogLevel system
