@@ -18,7 +18,15 @@ class Logger {
      */
     constructor(options) {
         this.options = options;
-        if(!this.options.colors) this.options.colors = {};
+        if(!this.options.colors) this.options.colors = {
+            info: this.defaults.info,
+            warning: this.defaults.warning,
+            error: this.defaults.error,
+            success: this.defaults.success
+        }; else {
+            Object.entries(this.options.colors).map((prop) => this.options.colors[prop[0]] = prop[1]);
+            Object.entries(this.defaults).filter(prop => !this.options.colors[prop[0]]).map((prop) => this.options[prop[0]] = prop[1])
+        }
         this.chalk = require('chalk');
         this.logsymbols = require('log-symbols');
         this.logLevels = {
