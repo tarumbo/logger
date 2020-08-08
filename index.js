@@ -17,6 +17,12 @@ class Logger {
      * @param {LoggerOptions} options 
      */
     constructor(options) {
+        this.defaults = {
+            info: `blue`,
+            warning: `yellow`,
+            error: `red`,
+            success: `green`
+        }
         this.options = options;
         if(!this.options.colors) this.options.colors = {
             info: this.defaults.info,
@@ -36,12 +42,6 @@ class Logger {
             3: "error"
         };
         if(this.options.defaultLogLevel) this.level = this.logLevels[this.options.defaultLogLevel || 0]; else this.level = "info";
-        this.defaults = {
-            info: `blue`,
-            warning: `yellow`,
-            error: `red`,
-            success: `green`
-        }
     }
     get base() {
         return this.chalk.bold.underline
